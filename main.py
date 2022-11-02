@@ -81,7 +81,7 @@ def show(workspace):
 def create(name, desc):
     user_workspaces = load_workspaces(WORKSPACES_FILE)
 
-    print(user_workspaces)
+    #print(user_workspaces)
 
     if name not in user_workspaces:
         user_workspaces.update({name: {
@@ -93,7 +93,7 @@ def create(name, desc):
 
     save_workspaces(WORKSPACES_FILE, user_workspaces)
 
-    print(user_workspaces)
+    #print(user_workspaces)
 
     # print("workspace {} created".format(name))
 
@@ -153,7 +153,9 @@ def start(workspace):
     for app in apps_list:
         exec_path = app["executable_path"]
         args = app["args"]
-        subprocess.run([exec_path, args])
+        print(exec_path, args)
+        a = subprocess.run([exec_path] + args.split(" "))
+        print(a)
 
 
 if __name__ == '__main__':
