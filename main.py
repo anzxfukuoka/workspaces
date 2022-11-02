@@ -77,7 +77,7 @@ def show(workspace):
 
 @main.command(help="creates new workspace")
 @click.option("--name", "-n", required=True, help="workspace name")
-@click.option("--desc", "-d", default="", help="workspace name")
+@click.option("--desc", "-d", default="", help="description")
 def create(name, desc):
     user_workspaces = load_workspaces(WORKSPACES_FILE)
 
