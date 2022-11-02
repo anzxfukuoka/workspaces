@@ -154,7 +154,7 @@ def start(workspace):
         exec_path = app["executable_path"]
         args = app["args"]
         print(exec_path, args)
-        a = subprocess.run([exec_path] + args.split(" "))
+        a = subprocess.Popen([exec_path] + args.split(" "))
         print(a)
 
 
