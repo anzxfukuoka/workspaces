@@ -1,5 +1,6 @@
 @ECHO OFF
 
-SET python=venv\Scripts\python.exe
+CD %~dp0%
+SET python="venv\Scripts\python.exe"
 
-python main.py %*
+%python% main.py %*
